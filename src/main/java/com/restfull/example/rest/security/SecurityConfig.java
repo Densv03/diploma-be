@@ -37,7 +37,7 @@ public class SecurityConfig {
         http.csrf().disable().authorizeHttpRequests(
                 (authorize) -> authorize.requestMatchers(HttpMethod.POST, SecurityConstants.SIGN_UP_URL).permitAll()
                         .anyRequest().authenticated()
-                        .and().addFilter(authenticationFilter)).addFilter(new AuthorizationFilter(authenticationManager))
+                        .and().addFilter(new AuthorizationFilter(authenticationManager)).addFilter(authenticationFilter))
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
         return http.build();
     }
