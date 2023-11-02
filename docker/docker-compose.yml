@@ -21,6 +21,19 @@ services:
       # Where our data will be persisted
     volumes:
       - /home/tt/Desktop/docker/mysqlvar/lib/mysql
+    # Application
+  diploma-application:
+      container_name: diploma-be
+      image: diploma-be:latest
+      build:
+        context: ..
+        dockerfile: docker/dockerfile/diploma-back
+      ports:
+        - "8083:8080"
+      environment:
+        MYSQL_HOST: localhost
+      depends_on:
+        - db_current_diploma
 # Names our volume
 volumes:
   my-db:

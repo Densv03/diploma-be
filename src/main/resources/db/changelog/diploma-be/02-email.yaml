@@ -1,0 +1,34 @@
+databaseChangeLog:
+  - changeSet:
+      id: 02-email.yaml
+      author: D.Sukhomlyn
+      created: 23.10.23
+      changes:
+        - createTable:
+            tableName: email
+            columns:
+              - column:
+                  name: id
+                  type: varchar(200)
+                  autoIncrement: false
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: email
+                  type: varchar(200)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: text
+                  type: varchar(200)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: dateCreated
+                  type: varchar(200)
+                  constraints:
+                    nullable: false
+      rollback:
+        - dropTable:
+            tableName: jobs

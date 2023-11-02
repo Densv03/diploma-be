@@ -1,0 +1,42 @@
+databaseChangeLog:
+  - changeSet:
+      id: 01-create-tables-user
+      author: D.Sukhomlyn
+      created: 23.10.23
+      changes:
+        - createTable:
+            tableName: user
+            table: user
+            id:
+              generatedValue: { strategy: AUTO }
+              type: integer
+              column: userId
+            fields:
+              userId:
+                type: string
+                column: user_id
+              name:
+                type: string
+                column: name
+              lastName:
+                type: string
+                column: last_name
+              email:
+                type: string
+                column: email
+                unique: true
+              password:
+                type: string
+                column: password
+              encryptedPassword:
+                type: string
+                column: encrypted_password
+              emailVerificationToken:
+                type: string
+                column: email_verification_token
+              emailVerificationStatus:
+                type: boolean
+                column: email_verification_status
+      rollback:
+        - dropTable:
+            tableName: user

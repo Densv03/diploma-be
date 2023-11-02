@@ -1,0 +1,6 @@
+databaseChangeLog:
+#  - include:
+#      file: db/changelog/diploma-be/01-create-tables-user.yaml
+  - include:
+     - file: db/changelog/diploma-be/02-email.yaml
+
