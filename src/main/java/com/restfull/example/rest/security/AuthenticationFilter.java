@@ -70,6 +70,8 @@ public class AuthenticationFilter extends UsernamePasswordAuthenticationFilter {
         res.addHeader("UserId", user.getUserId());
 
         res.addHeader(SecurityConstants.HEADER_STRING, SecurityConstants.TOKEN_PREFIX + token);
+        res.addHeader("Access-Control-Expose-Headers", "Authorization");
+        res.addHeader("Access-Control-Expose-Headers", "UserId");
     }
 
 }
