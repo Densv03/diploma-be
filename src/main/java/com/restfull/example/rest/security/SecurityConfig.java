@@ -34,7 +34,7 @@ public class SecurityConfig {
         http.authenticationManager(authenticationManager);
         final AuthenticationFilter authenticationFilter = new AuthenticationFilter(authenticationManager);
         authenticationFilter.setFilterProcessesUrl("/user/login");
-        http.csrf().disable().authorizeHttpRequests(
+        http.csrf().disable().cors(cors -> cors.disable()).authorizeHttpRequests(
                 (authorize) -> authorize.requestMatchers(HttpMethod.POST, SecurityConstants.SIGN_UP_URL).permitAll()
                         .anyRequest().authenticated()
                         .and().addFilter(new AuthorizationFilter(authenticationManager)).addFilter(authenticationFilter))
