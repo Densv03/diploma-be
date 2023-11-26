@@ -43,7 +43,7 @@ public class SecurityConfig {
         authenticationFilter.setFilterProcessesUrl("/user/login");
         http.csrf().disable()
                 .cors(httpSecurityCorsConfigurer -> httpSecurityCorsConfigurer.configurationSource(corsConfigurationSource())).authorizeHttpRequests(
-                (authorize) -> authorize.requestMatchers(HttpMethod.POST, SecurityConstants.SIGN_UP_URL).permitAll()
+                (authorize) -> authorize.requestMatchers(HttpMethod.GET, "/myproject/swagger-ui/index.html").permitAll().requestMatchers(HttpMethod.POST, SecurityConstants.SIGN_UP_URL).permitAll()
                         .anyRequest().authenticated()
                         .and().addFilter(new AuthorizationFilter(authenticationManager)).addFilter(authenticationFilter))
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);

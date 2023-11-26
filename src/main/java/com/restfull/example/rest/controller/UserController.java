@@ -2,7 +2,7 @@ package com.restfull.example.rest.controller;
 
 import com.restfull.example.rest.entety.UserEntity;
 import com.restfull.example.rest.model.request.UserRequest;
-import com.restfull.example.rest.model.request.UserResponse;
+import com.restfull.example.rest.response.UserResponse;
 import com.restfull.example.rest.repository.UserRepository;
 import com.restfull.example.rest.service.UserServiceImpl;
 import com.restfull.example.rest.shared.dto.UserDto;

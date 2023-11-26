@@ -2,14 +2,15 @@ package com.restfull.example.rest.model.request;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
-public class UserResponse {
-    private String userId;
+@AllArgsConstructor
+@EqualsAndHashCode
+public class GenerateLabelRequest {
     private String name;
-    private String lastName;
-    private String email;
+    private String description;
+
 }
