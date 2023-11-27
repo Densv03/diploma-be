@@ -41,7 +41,7 @@ public class OpenAiLocalService {
 //    }
 
     public ChatCompletionResult chatCompletion(final List<ChatMessage> chatMessages) {
-        return chatCompletion(chatMessages, "gpt-4", 1d);
+        return chatCompletion(chatMessages, "gpt-3.5-turbo", 1d); // gpt-4
     }
 
     public ChatCompletionResult chatCompletion(final List<ChatMessage> chatMessages, final String model,
