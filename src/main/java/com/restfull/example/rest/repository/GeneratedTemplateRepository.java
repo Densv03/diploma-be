@@ -7,6 +7,6 @@ import java.util.List;
 
 public interface GeneratedTemplateRepository extends JpaRepository<GeneratedTemplateEntity, Integer> {
 
-    List<GeneratedTemplateEntity> findAllById(Integer labelId);
+    List<GeneratedTemplateEntity> findAllByLabelId(Integer labelId);
 
 }

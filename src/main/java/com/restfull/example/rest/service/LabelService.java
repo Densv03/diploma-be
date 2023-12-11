@@ -37,7 +37,7 @@ public class LabelService {
             LabelAllResponse labelAllResponse = new LabelAllResponse();
             final LabelEntity labelEntity = labelList.get(i);
             labelAllResponse.setLabel(labelEntity.getName());
-            final List<GeneratedTemplateEntity> generatedTemplateList = templateRepository.findAllById(labelEntity.getId());
+            final List<GeneratedTemplateEntity> generatedTemplateList = templateRepository.findAllByLabelId(labelEntity.getId());
             for (int j = 0; j < generatedTemplateList.size(); j++) {
                 final GeneratedTemplateEntity templateEntity = generatedTemplateList.get(i);
                 GenerateTemplateResponse template = new GenerateTemplateResponse();
@@ -68,7 +68,7 @@ public class LabelService {
         final LabelEntity labelEntity = optional.get();
         LabelAllResponse labelAllResponse = new LabelAllResponse();
         labelAllResponse.setLabel(labelEntity.getName());
-        final List<GeneratedTemplateEntity> generatedTemplateList = templateRepository.findAllById(labelEntity.getId());
+        final List<GeneratedTemplateEntity> generatedTemplateList = templateRepository.findAllByLabelId(labelEntity.getId());
         for (int j = 0; j < generatedTemplateList.size(); j++) {
             final GeneratedTemplateEntity templateEntity = generatedTemplateList.get(j);
             GenerateTemplateResponse template = new GenerateTemplateResponse();
