@@ -1,0 +1,13 @@
+databaseChangeLog:
+  - changeSet:
+      id: 03-group.yaml
+      author: D.Sukhomlyn
+      created: 23.10.23
+      changes:
+        sqlFile:
+          encoding: "utf8"
+          path: "db/changelog/diploma-be/3-group/03-group-changes.sql"
+      rollback:
+        encoding: "utf8"
+        path: "db/changelog/diploma-be/3-group/03-group-rollback.sql"
+

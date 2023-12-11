@@ -1,0 +1,12 @@
+databaseChangeLog:
+  - changeSet:
+      id: 01-create-tables-user
+      author: D.Sukhomlyn
+      created: 23.10.23
+      changes:
+        sqlFile:
+          encoding: "utf8"
+          path: "db/changelog/diploma-be/1-user/01-user-changes.sql"
+      rollback:
+        encoding: "utf8"
+        path: "db/changelog/diploma-be/1-user/01-user-rollback.sql"

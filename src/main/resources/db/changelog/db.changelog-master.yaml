@@ -1,6 +1,17 @@
 databaseChangeLog:
 #  - include:
-#      file: db/changelog/diploma-be/01-create-tables-user.yaml
+#      file: db/changelog/diploma-be/01-user.yaml
   - include:
-     - file: db/changelog/diploma-be/02-email.yaml
+     - file: db/changelog/diploma-be/1-user/01-user.yaml
+  - include:
+     - file: db/changelog/diploma-be/2-label/02-label.yaml
+  - include:
+     - file: db/changelog/diploma-be/3-group/03-group.yaml
+  - include:
+     - file: db/changelog/diploma-be/4-receiver_user/04-receiver_user.yaml
+  - include:
+     - file: db/changelog/diploma-be/5-template/05-template.yaml
+  - include:
+     - file: db/changelog/diploma-be/6-push/06-push.yaml
+
 

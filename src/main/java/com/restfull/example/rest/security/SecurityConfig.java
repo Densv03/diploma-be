@@ -43,11 +43,15 @@ public class SecurityConfig {
         authenticationFilter.setFilterProcessesUrl("/user/login");
         http.csrf().disable()
                 .cors(httpSecurityCorsConfigurer -> httpSecurityCorsConfigurer.configurationSource(corsConfigurationSource())).authorizeHttpRequests(
-                (authorize) -> authorize.requestMatchers(HttpMethod.GET, "/myproject/swagger-ui/index.html").permitAll().requestMatchers(HttpMethod.POST, SecurityConstants.SIGN_UP_URL).permitAll()
+                (authorize) -> authorize.requestMatchers(SecurityConstants.SIGN_UP_URL, "/demo",
+                              "/swagger-ui.html",
+                                "/v3/api-docs/**",
+                                "/swagger-ui/**",
+                                "/v2/api-docs/**",
+                                "/swagger-resources/**").permitAll()
                         .anyRequest().authenticated()
                         .and().addFilter(new AuthorizationFilter(authenticationManager)).addFilter(authenticationFilter))
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
-        //http;
         return http.build();
     }
 

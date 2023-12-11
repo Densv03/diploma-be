@@ -1,0 +1,13 @@
+databaseChangeLog:
+  - changeSet:
+      id: 05-template.yaml
+      author: D.Sukhomlyn
+      created: 23.10.23
+      changes:
+        sqlFile:
+          encoding: "utf8"
+          path: "db/changelog/diploma-be/5-template/05-template-changes.sql"
+      rollback:
+        encoding: "utf8"
+        path: "db/changelog/diploma-be/5-template/05-template-rollback.sql"
+

@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
+import java.util.UUID;
 
 @Data
 @AllArgsConstructor
@@ -12,7 +13,7 @@ import java.io.Serializable;
 public class UserDto implements Serializable {
     private static final long serialVersionUID = -6323490203571189893L;
     private Long id;
-    private String userId;
+    private UUID userId;
     private String name;
     private String lastName;
     private String email;

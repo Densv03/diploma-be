@@ -36,10 +36,10 @@ public class UserServiceImpl implements UserService {
         UserEntity userEntity = new UserEntity();
         BeanUtils.copyProperties(user, userEntity);
 
-        String publicUserId = UUID.randomUUID().toString();
+        UUID publicUserId = UUID.randomUUID();
         userEntity.setUserId(publicUserId);
         userEntity.setEncryptedPassword(passwordEncoder.encode(user.getPassword()));
-
+        userEntity.setEmailVerificationToken("asdas");
         UserEntity storedUserDetails = userRepository.save(userEntity);
 
         UserDto returnValue = new UserDto();
@@ -55,6 +55,7 @@ public class UserServiceImpl implements UserService {
         if (userEntity == null) throw new UsernameNotFoundException(email);
         UserDto userDto = new UserDto();
         BeanUtils.copyProperties(userEntity, userDto);
+        userDto.setUserId(userEntity.getUserId());
         return userDto;
     }
 

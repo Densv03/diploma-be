@@ -1,0 +1,13 @@
+databaseChangeLog:
+  - changeSet:
+      id: 02-label.yaml
+      author: D.Sukhomlyn
+      created: 23.10.23
+      changes:
+        sqlFile:
+          encoding: "utf8"
+          path: "db/changelog/diploma-be/2-label/02-label-changes.sql"
+      rollback:
+        encoding: "utf8"
+        path: "db/changelog/diploma-be/2-label/02-label-rollback.sql"
+

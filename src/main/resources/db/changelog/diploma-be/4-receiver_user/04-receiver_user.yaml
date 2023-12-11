@@ -1,0 +1,13 @@
+databaseChangeLog:
+  - changeSet:
+      id: 04-receiver_user.yaml
+      author: D.Sukhomlyn
+      created: 23.10.23
+      changes:
+        sqlFile:
+          encoding: "utf8"
+          path: "db/changelog/diploma-be/4-receiver_user/04-receiver_user-changes.sql"
+      rollback:
+        encoding: "utf8"
+        path: "db/changelog/diploma-be/4-receiver_user/04-receiver_user-rollback.sql"
+

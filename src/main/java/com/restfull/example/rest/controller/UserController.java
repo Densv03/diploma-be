@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("user")
@@ -54,7 +55,7 @@ public class UserController {
     }
 
     @GetMapping("/currentUser")
-    public ResponseEntity<UserEntity> getUser(@RequestHeader("UserId") final String uuid) {
+    public ResponseEntity<UserEntity> getUser(@RequestHeader("UserId") final UUID uuid) {
         final UserEntity user = userRepository.findByUserId(uuid);
         return ResponseEntity.ok(user);
     }
