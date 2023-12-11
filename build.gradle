@@ -19,7 +19,7 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     implementation group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa'
-    implementation group: 'mysql', name: 'mysql-connector-java', version: '8.0.33'
+//    implementation group: 'mysql', name: 'mysql-connector-java', version: '8.0.33'
     compileOnly 'org.projectlombok:lombok:1.18.24'
     annotationProcessor 'org.projectlombok:lombok:1.18.22'
     // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-security
@@ -34,6 +34,9 @@ dependencies {
     implementation 'org.liquibase:liquibase-core:4.24.0'
     implementation 'com.theokanning.openai-gpt3-java:service:0.14.0'
     implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.1.0'
+    // https://mvnrepository.com/artifact/org.postgresql/postgresql
+    runtimeOnly 'org.postgresql:postgresql:42.6.0'
+
 
 
 
