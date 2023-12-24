@@ -27,9 +27,14 @@ public class PushEmailService {
             pushEntity.setUsingPlaceHolder(request.getUsingPlaceHolder());
             pushEntity.setFrom(request.getFrom());
 //            pushEntity.setGroupId(labelId);
-            pushEntity.setEmail(pushEntity.getEmail());
+            pushEntity.setEmail(pushEmailRequests.get(i).getEmail());
+            pushEntity.setUserId(id);
             pushRepository.save(pushEntity);
         }
 
+    }
+
+    public List<PushEntity> getPushEntity(){
+        return pushRepository.findAll();
     }
 }

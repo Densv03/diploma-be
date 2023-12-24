@@ -10,6 +10,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.OffsetDateTime;
 import java.util.UUID;
 
 @Entity
@@ -20,6 +21,7 @@ import java.util.UUID;
 public class PushEntity {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
+    private Integer id;
     private String title;
     private String template;
     @Column(name = "using_place_holder")
@@ -27,5 +29,8 @@ public class PushEntity {
     @Column(name = "from_name")
     private String from;
     private String email;
-    private Integer groupId;
+    @Column(name = "user_id")
+    private UUID userId;
+    @Column(name = "created_at")
+    private OffsetDateTime createdAt = OffsetDateTime.now();
 }

@@ -59,6 +59,11 @@ public class UserServiceImpl implements UserService {
         return userDto;
     }
 
+    @Override
+    public UserEntity getUserEmailById(UUID userId) {
+        return userRepository.findByUserId(userId);
+    }
+
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {

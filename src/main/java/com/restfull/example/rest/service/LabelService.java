@@ -39,7 +39,7 @@ public class LabelService {
             labelAllResponse.setLabel(labelEntity.getName());
             final List<GeneratedTemplateEntity> generatedTemplateList = templateRepository.findAllByLabelId(labelEntity.getId());
             for (int j = 0; j < generatedTemplateList.size(); j++) {
-                final GeneratedTemplateEntity templateEntity = generatedTemplateList.get(i);
+                final GeneratedTemplateEntity templateEntity = generatedTemplateList.get(j);
                 GenerateTemplateResponse template = new GenerateTemplateResponse();
                 template.setTitle(templateEntity.getTitle());
                 template.setTemplate(templateEntity.getTemplate());
