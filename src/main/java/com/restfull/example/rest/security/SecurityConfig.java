@@ -48,6 +48,7 @@ public class SecurityConfig {
                                 "/v3/api-docs/**",
                                 "/swagger-ui/**",
                                 "/v2/api-docs/**",
+                                "/async/example",
                                 "/swagger-resources/**").permitAll()
                         .anyRequest().authenticated()
                         .and().addFilter(new AuthorizationFilter(authenticationManager)).addFilter(authenticationFilter))
