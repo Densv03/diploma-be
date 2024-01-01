@@ -34,7 +34,12 @@ public class PushEmailService {
 
     }
 
-    public List<PushEntity> getPushEntity(){
-        return pushRepository.findAll();
+    public List<PushEntity> getNotSendMails(){
+        return pushRepository.findByIsSendIsFalse();
+    }
+
+    public void updateSend(PushEntity pushEntity){
+        pushEntity.setIsSend(true);
+        pushRepository.save(pushEntity);
     }
 }

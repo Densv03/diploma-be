@@ -33,4 +33,6 @@ public class PushEntity {
     private UUID userId;
     @Column(name = "created_at")
     private OffsetDateTime createdAt = OffsetDateTime.now();
+    @Column(name="is_send")
+    private Boolean isSend = false;
 }

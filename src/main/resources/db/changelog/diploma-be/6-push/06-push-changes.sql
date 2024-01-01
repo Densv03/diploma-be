@@ -7,7 +7,8 @@ CREATE TABLE diploma.push
     using_place_holder BOOLEAN     default false,
     from_name          varchar(40) DEFAULT NULL,
     email              varchar(40) DEFAULT NULL,
-    user_id   uuid unique NOT NULL
+    is_send            boolean      NOT NULL default false,
+    user_id            uuid  NOT NULL
 );
 
 alter table diploma.push
